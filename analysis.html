@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Analysis</title>
+</head>
+<body>
+    <h1>Sales Analysis Results</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Upload Data File:</label>
+            <input type="file" name="file" class="form-control-file" id="file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% if table %}
+    <h2>Sales Data Table</h2>
+    {{ table|safe }}
+    {% endif %}
+    {% if plot %}
+    <h2>Sales Data Visualization</h2>
+    {{ plot|safe }}
+    {% endif %}
+</body>
+</html>
